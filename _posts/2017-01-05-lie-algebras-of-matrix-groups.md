@@ -10,19 +10,28 @@ tags:
   - geometry
 ---
 
-Consider a Lie subgroup \\(G \leq \mathrm{GL}(n;\mathbb{R})\\). There are three ways to define the Lie algebra \\(\mathfrak{g}\\) of \\(G\\):
+Let \\(G \leq \mathrm{GL}(n;\mathbb{R})\\) be a Lie group. Denote the Lie algebras of \\(G\\) and \\(\mathrm{GL}(n;\mathbb{R})\\) by
+\\(\mathfrak{g}\\) and \\(\mathfrak{gl}(n;\mathbb{R})\\) respectively. We usually define the Lie algebra \\(\mathfrak{g}\\) to be the
+space of left \\(G\\)-invariant vector fields on \\(G\\), ie. the set of vector fields \\(\mathcal{X}\\) such that, for all \\(g,a\in G\\)
+we have
+<div>\begin{equation}
+\mathcal{X}_{g\cdot a} = (L_g)_\ast \mathcal{X}_a
+\end{equation}</div>
+Here the diffeomorphism \\(L_g \in \mathrm{Diff}(G)\\) is left multiplication by \\(g\\). It is well known that \\(\mathfrak{g}\\) is
+isomorphic to the tangent space \\(T_{\mathrm{id}}G\\) and these two spaces are usually identified. In this note we prove a further
+equivalence of the form
+\\[\mathfrak{g} \cong \\{ A \in \mathrm{Mat}(n; \mathbb{R}) ~|~ \exp(tA) \in G \text{ for all } t \in \mathbb{R}\\}\\]
+which holds for matrix groups like \\(G\\). 
 
-* the set of left \\(G\\)-invariant vector fields on the manifold \\(G\\);
-* the tangent space \\(T_{\mathrm{id}}G\\) to the identity in \\(G\\);
-* the set of matrices \\(A \in \mathrm{GL}(n;\mathbb{R})\\) such that \\(\exp(tA) \in G\\) for all \\(t \in \mathbb{R}\\). 
+Let us first consider the manifold \\(\mathrm{Mat}(n;\mathbb{R})\\) with coordinates \\((x_{ij})\\). The corresponding derivations
+\\(\\{\frac{\partial}{\partial x^{ij}}\\}\\) span the tangent space \\(T_{\mathrm{id}}\mathrm{Mat}(n;\mathbb{R})\\), which we
+can therefore think of as another copy of \\(\mathrm{Mat}(n;\mathbb{R})\\). Since \\(\mathfrak{g}\\) is a subspace of
+\\(T_{\mathrm{id}}\mathrm{Mat}(n;\mathbb{R})\\), this gives us a way to identify elements of \\(\mathfrak{g}\\) with \\(n\times n\\)-matrices. 
 
-The equivalence of the first two is well-known and holds for general Lie groups. We give a quick argument establishing the equivalence
-of the third definition. 
-
-Let us first establish a coordinate system on \\(\mathrm{GL}(n; \mathbb{R})\\). The easiest way to do this is to identify \\(\mathrm{GL}(n;\mathbb{R})\\) with \\(\mathbb{R}^{n^2}\\). The tangent space 
-\\(T_{\mathrm{id}}\mathrm{GL}(n;\mathbb{R})\\) is then seen to be another copy of \\(\mathbb{R}^{n^2}\\), and hence of \\(\mathrm{GL}(n; \mathbb{R}^2)\\). In other words, as sets we have
-\\[ \mathfrak{gl}(n;\mathbb{R}) = \mathrm{GL}(n; \mathbb{R}) \\]
-where \\(\mathfrak{gl}(n;\mathbb{R})\\) denotes the Lie algebra of \\(\mathrm{GL}(n;\mathbb{R})\\). 
-
-Next, observe that \\(T_{\mathrm{id}}G \subseteq T_{\mathrm{id}}\mathrm{GL}(n;\mathbb{R})\\); in other words, we have \\(\mathfrak{g} \subseteq \mathfrak{gl}(n;\mathbb{R})\\). Together with the above, this provides a way of associating 
-a matrix \\(A \in \mathrm{GL}(n; \mathbb{R})\\) to each element \\(g \in G\\). 
+Exploiting the identification above, suppose we are given some \\(n\times n\\) matrix \\(A\\) representing a vector in \\(\mathfrak{g}\\).
+Viewing \\(\mathfrak{g}\\) as the space of left invariant vector fields on \\(G\\), \\(A\\) corresponds to the matrix differential equation
+\\[\frac{\mathrm{d}X}{\mathrm{d}t} = A X\\]
+which has as solution the matrix exponential \\(t \mapsto \exp(tA)\\). Since \\(\exp(tA)\\) is a flow on the manifold \\(G\\), it follows that
+\\(\exp(tA) \in G\\) for all \\(t \in \mathbb{R}\\). Conversely, suppose we are given a matrix \\(A\\) such that \\(\exp(tA) \in G\\) for all
+real \\(t\\). By the uniqueness theorem for systems of differential equations, \\(A\\) must be the coordinate representation of a vector field
+tangent to the manifold \\(G\\). In other words, \\(A \in \mathfrak{g}\\) and we are done.
