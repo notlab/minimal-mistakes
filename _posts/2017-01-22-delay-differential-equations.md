@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Delay Differential Equations"
+title: "Delay Differential Equations I"
 categories:
   - Applied Mathematics
 tags:
@@ -68,4 +68,7 @@ which in turn has solution
 <div class="mathjax">\begin{equation*}
   x(t) = -c\theta_o(t^2 - \tau t) + \theta_0t - \theta_0\tau(c + 1) + \theta_0
 \end{equation*}</div>
-Repeating this process we can extend this solution as long as we like. 
+Repeating this process we can extend this solution as long as we like.
+
+In [Delay Differential Equations II]({{ site.baseurl }}{% post_url 2017-01-22-delay-differential-equations-ii %}) we consider
+more powerful methods for solving a class of DDE that includes equations of the type (\ref{eq:dde}).
