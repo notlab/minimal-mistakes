@@ -14,8 +14,12 @@ Consider a differential equation of the form
 for some locally Lipschitz function \\(f \colon \mathbb{R} \times \mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^d\\) and \\(\tau > 0\\).
 An equation of the form (\ref{eq:dde}) is an example of a *delay differential equation* (DDE). The \\(x(t-\tau)\\) term signifies that the value
 \\(x(t)\\) of a solution depends on the earlier state at time \\(t - \tau\\). In applications we are generally interested in solutions
-defined for \\(t>0\\). In such cases we also specify an initial function \\(\varphi \colon [-\tau, 0] \to \mathbb{R}^d\\) representing the
-history of the system before our initial time \\(t = 0\\). 
+defined for \\(t>0\\), and where we specify an initial function \\(\varphi \colon [-\tau, 0] \to \mathbb{R}^d\\) representing the
+history of the system before our initial time \\(t = 0\\).
+
+In this note we provide a naive method for solving DDEs of the type in equation (\ref{eq:dde}). While this method is of limited practical
+use, it provides an initial understanding into the behaviour of solutions to DDEs.
+
 
 ## The method of steps
 
