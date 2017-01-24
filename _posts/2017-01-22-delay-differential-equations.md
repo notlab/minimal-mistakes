@@ -12,19 +12,19 @@ Consider a differential equation of the form
   \frac{\mathrm{d}x}{\mathrm{d}t} = f(t, x(t), x(t - \tau))
 \end{equation}</div>
 for some locally Lipschitz function \\(f \colon \mathbb{R} \times \mathbb{R}^d \times \mathbb{R}^d \to \mathbb{R}^d\\) and \\(\tau > 0\\).
-An equation of the form (\ref{eq:dde}) is an example of a *delay differential equation* (DDE). The \\(x(t-\tau)\\) term signifies that the value
+An equation of the form \ref{eq:dde} is an example of a *delay differential equation* (DDE). The \\(x(t-\tau)\\) term signifies that the value
 \\(x(t)\\) of a solution depends on the earlier state at time \\(t - \tau\\). In applications we are generally interested in solutions
 defined for \\(t>0\\), and where we specify an initial function \\(\varphi \colon [-\tau, 0] \to \mathbb{R}^d\\) representing the
 history of the system before our initial time \\(t = 0\\).
 
-In this note we provide a naive method for solving DDEs of the type in equation (\ref{eq:dde}). While this method is of limited practical
+In this note we provide a naive method for solving DDEs of the type in equation \ref{eq:dde}. While this method is of limited practical
 use, it provides an initial understanding into the behaviour of solutions to DDEs.
 
 
 ## The method of steps
 
-Suppose we are given equation (\ref{eq:dde}) with history function \\(\varphi\\) on \\([-\tau, 0]\\). Once \\(\varphi\\) is fixed, equation
-(\ref{eq:dde}) to the initial value problem
+Suppose we are given equation \ref{eq:dde} with history function \\(\varphi\\) on \\([-\tau, 0]\\). Once \\(\varphi\\) is fixed, equation
+\ref{eq:dde} reduces to the initial value problem
 <div class="mathjax">\begin{equation*}
 \begin{split}
   \frac{\mathrm{d}x}{\mathrm{d}t} &= f(t, x(t), \varphi(t - \tau)), \quad t \in (0, \tau]\\
@@ -71,4 +71,4 @@ which in turn has solution
 Repeating this process we can extend this solution as long as we like.
 
 In [Delay Differential Equations II]({{ site.baseurl }}{% post_url 2017-01-22-delay-differential-equations-ii %}) we consider
-more powerful methods for solving a class of DDE that includes equations of the type (\ref{eq:dde}).
+more powerful methods for solving a class of DDE that includes equations of the type \ref{eq:dde}.
