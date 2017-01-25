@@ -8,6 +8,8 @@ tags:
   - unbounded-operators
 ---
 
+Let \\(T\\) be a non-negative operator defined on some dense subspace of the Hilbert space \\(\mathcal{H}\\). The 
+
 **Definition 1.** Let \\(\mathcal{H}_0\\) and \\(\mathcal{H}_1\\) be Hilbert spaces. An *unbounded operator* \\(\mathcal{H}_0 \to \mathcal{H}_1\\)
 is a linear map
 <div class="mathjax">\begin{equation*}

@@ -29,23 +29,44 @@ a family of new functions
 <div class="mathjax">\begin{equation*}
   x_t(\sigma) ~:= x(t + \sigma)
 \end{equation*}</div>
-For a given value of \\(t\\), the function \\(x_t\\) represents the history of the function \\(x\\) on the interval \\([t-\tau, t]\\). 
-By the term *delay differential equation* we shall mean an equation of the form
+For a given value of \\(t\\), the function \\(x_t\\) represents the history of the function \\(x\\) on the interval \\([t-\tau, t]\\).
+
+**Definition 1.** By the term *delay differential equation* we shall mean an equation of the form
 <div class="mathjax">\begin{equation} \label{eq:absdde}
   \frac{\mathrm{d}x_t}{\mathrm{d}t} = f(x_t)
 \end{equation}</div>
-The important thing distinguishing this from an ODE is that the evolution at time \\(t\\) depends on the history of the solution on the
-entire interval \\([t-\tau, t]\\). As before, we typically impose an initial function condition of the form \\(x| \_ {[-\tau, 0]} = \varphi\\) 
-for some \\(\varphi \in C_{\tau, d}\\).
+Note that on the left hand side we are taking a Frechet derivative in the space \\(C_{\tau, d}\\). As before, we typically impose an initial 
+function condition of the form \\(x| \_ {[-\tau, 0]} = \varphi\\) for some \\(\varphi \in C_{\tau, d}\\). We shall denote a solution to equation 
+\ref{eq:absdde} with initial function \\(\varphi\\) by \\(x_t^\varphi\\).
+∎
+
+The important thing distinguishing a DDE from an ODE is that the evolution at time \\(t\\) depends on the history of the solution on the
+entire interval \\([t-\tau, t]\\).
+
 
 ## DDE Semigroups
 
 Denote by \\(L\\) the linearization (Frechet derivative) of the operator \\(f\\) at the zero function, and let us consider the simplified 
 system
+<div class="mathjax">\begin{equation}\label{eq:lin}
+  \frac{\mathrm{d}x}{\mathrm{d}t} = L[x_t], \quad
+  x_0 = \varphi
+\end{equation}</div>
+As usual we can learn a lot about a DDE by studying the flow of solutions to its linearization. 
+
+**Definition 2.** Suppose we are given a linearized DDE as in equation \ref{eq:lin}. For each \\(t > 0\\), the *solution operator* 
+\\(P[t] \colon C_{\tau, d} \to C_{\tau, d}\\) is defined according to the formula
 <div class="mathjax">\begin{equation*}
-\begin{split}
-  \frac{\mathrm{d}x_t}{\mathrm{d}t} &= L[x_t] \\
-  x_0 &= \varphi
-\end{split}
-\end{equation*}</div>
-If \\(x_t[\varphi]\\) is a solution to this system
+  P[t](\varphi) = x_t^\varphi
+\end{equation*}</div> ∎
+
+It is easy to verify the solution operators satisfy the axioms of a one-parameter semigroup. In other words, the solution operators
+satisfy the following three properties:
+
+* For all \\(t \geq 0\\), \\(P[t]\\) is bounded linear operator on \\(C_{\tau, d}\\) satisfying
+  <div class="mathjax">\begin{equation*}
+    P[s + t](\varphi) = P[s](P[t](\varphi));
+  \end{equation*}</div>
+* \\(P\[0\](\varphi) = \varphi\\);
+* \\(\lim_{s \rightarrow t} \| P\[s\](\varphi) - P\[t\](\varphi) \| = 0\\).
+
