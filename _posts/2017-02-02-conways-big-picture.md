@@ -49,6 +49,19 @@ Let \\(e_1 = 1\\) and \\(e_2 = i\\) be the standard basis vectors for \\(\mathbb
 \\(\langle e_1, e_2\rangle\\) is called the *standard lattice*. In this section we show that any projective class of lattice commensurable to 
 \\(\langle e_1, e_2\rangle\\) has a representative of the form \\(\langle M e_1 + \frac{m}{g} e_2, e_2\rangle\\). 
 
-<div class="mathjax">\begin{equation*}
+To this end, let us first observe that any lattice commensurable with \\(\langle e_1, e_2\rangle\\) can be written in the form
+<div class="mathjax">\begin{equation} \label{eq:fracs}
  \left\langle \frac{a_0}{a_1} e_1 + \frac{b_0}{b_1} e_2, \frac{c_0}{c_1} e_1, \frac{d_0}{d_1} e_2 \right\rangle
-\end{equation*}</div>
+\end{equation}</div>
+where each of the coefficients on the \\(e_i\\) are elements of \\(\mathbb{Q}\\) in lowest terms. Clearing denominators in equation 
+\ref{eq:fracs} yields a projectively equivalent lattice
+<div class="mathjax">\begin{equation} \label{eq:ints}
+  \langle Ae_1 + Be_2 , Ce_1 + De_2 \rangle
+\end{equation}</div>
+where \\(A, B, C, D \in \mathbb{Z}\\). Next, if we choose a matrix 
+\\(\left(\begin{smallmatrix}\alpha & \beta \\\\ \gamma & \delta\end{smallmatrix}\right) \in \mathrm{SL}(2;\mathbb{Z})\\) then the lattice
+<div class="mathjax">\begin{align} \label{eq:big} \begin{split}
+  \langle \alpha(A & e_1 + Be_2) + \beta(Ce_1 + De_2), \gamma(Ae_1 + Be_2) + \delta(Ce_1 + De_2)\rangle
+\end{split} \end{align}</div>
+is the same as the lattice in equation \ref{eq:ints}. If this expression is to reduce to something of the form
+\\(\langle Me_1 + \frac{m}{g} e_2, e_2\rangle\\), it is necessary that \\(\gamma A + \delta C = 0\\)
