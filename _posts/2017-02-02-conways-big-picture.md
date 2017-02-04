@@ -11,6 +11,10 @@ tags:
   - combinatorics
 ---
 
+In this note we briefly describe the combinatorial/diagrammatic "big picture" framework introduced by J.H. Conway in his paper 
+*Understanding groups like* \\(\Gamma_0(N)\\). Conway's big picture can be used to understand the structure of sets of commensurable lattices 
+in the plane (amongst other things).
+
 ### Background
 
 In what follows we always assume \\(\omega_1, \omega_2 \in \mathbb{C}\\) are linearly indepenent over \\(\mathbb{R}\\). 
@@ -58,10 +62,28 @@ where each of the coefficients on the \\(e_i\\) are elements of \\(\mathbb{Q}\\)
 <div class="mathjax">\begin{equation} \label{eq:ints}
   \langle Ae_1 + Be_2 , Ce_1 + De_2 \rangle
 \end{equation}</div>
-where \\(A, B, C, D \in \mathbb{Z}\\). Next, if we choose a matrix 
+where \\(A, B, C, D \in \mathbb{Z}\\) have no common factors. Next, if we choose a matrix 
 \\(\left(\begin{smallmatrix}\alpha & \beta \\\\ \gamma & \delta\end{smallmatrix}\right) \in \mathrm{SL}(2;\mathbb{Z})\\) then the lattice
-<div class="mathjax">\begin{align} \label{eq:big} \begin{split}
-  \langle \alpha(A & e_1 + Be_2) + \beta(Ce_1 + De_2), \gamma(Ae_1 + Be_2) + \delta(Ce_1 + De_2)\rangle
-\end{split} \end{align}</div>
+<div class="mathjax">\begin{equation} \label{eq:big}
+  \langle \alpha(Ae_1 + Be_2) + \beta(Ce_1 + De_2), \gamma(Ae_1 + Be_2) + \delta(Ce_1 + De_2)\rangle
+\end{equation}</div>
 is the same as the lattice in equation \ref{eq:ints}. If this expression is to reduce to something of the form
-\\(\langle Me_1 + \frac{m}{g} e_2, e_2\rangle\\), it is necessary that \\(\gamma A + \delta C = 0\\)
+\\(\langle Me_1 + \frac{m}{g} e_2, e_2\rangle\\), it is going to be necessary to choose
+\\(\left(\begin{smallmatrix}\alpha & \beta \\\\ \gamma & \delta\end{smallmatrix}\right)\\) such that \\(\gamma A + \delta C = 0\\). One obvious 
+choice is to take \\(\gamma = -C\\) and \\(\delta = A\\). Then \\(\gamma\\) and \\(\delta\\) are co-prime since \\(A\\) and \\(C\\) are
+assumed co-prime. As such, there exist \\(\alpha, \beta \in \mathbb{Z}\\) such that
+<div class="mathjax">\begin{equation*}
+  \alpha\delta - \beta\gamma = 1
+\end{equation*}</div>
+In other words, it is possible to choose
+\\(\left(\begin{smallmatrix}\alpha & \beta \\\\ \gamma & \delta\end{smallmatrix}\right) \in \mathrm{SL}(2;\mathbb{Z})\\) such that equation
+\ref{eq:big} reduces to
+<div class="mathjax">\begin{equation} \label{eq:e2clear}
+  \langle (\alpha A + \beta C)e_1 + (\alpha B + \beta D)e_2, (AD - BC)e_2\rangle
+\end{equation}</div>
+Finally, dividing by \\(AD - BC\\) yields a lattice projectively equivalent to \ref{eq:e2clear}:
+<div class="mathjax">\begin{equation}
+  \left\langle \frac{\alpha A + \beta C}{AD - BC} e_1 + \frac{\alpha B + \beta D}{AD - BC} e_2, e_2 \right\rangle
+\end{equation}</div>
+Setting \\(M = \frac{\alpha A + \beta C}{AD - BC}\\), \\(g = \alpha B + \beta D\\), and \\(m = AD - BC\\) we arrive at a representative for
+our projective class of lattices in the desired form. 
