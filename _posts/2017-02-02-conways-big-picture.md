@@ -11,9 +11,9 @@ tags:
   - combinatorics
 ---
 
-In this note we briefly describe the combinatorial/diagrammatic "big picture" framework introduced by J.H. Conway in his paper 
-*Understanding groups like* \\(\Gamma_0(N)\\). Conway's big picture can be used to understand the structure of sets of commensurable lattices 
-in the plane (amongst other things).
+In this note we briefly describe the combinatorial/diagrammatic "big picture" framework introduced by 
+[J.H. Conway](https://en.wikipedia.org/wiki/John_Horton_Conway) in his paper *Understanding groups like* \\(\Gamma_0(N)\\). Conway's big 
+picture can be used to understand the structure of sets of commensurable lattices in the plane (amongst other things).
 
 ### Background
 
@@ -37,12 +37,13 @@ Let us write \\(L_1 \sim L_2\\) if \\(L_1, L_2\\) are two lattices satisfying
 \end{equation*}</div>
 for some \\(\lambda \in \mathbb{Q}^\times\\). It is easy to see that \\(\sim\\) is an equivalence relation on \\(\mathrm{Lat}(\mathbb{C})\\).
 If \\(L_1 \sim L_2\\) we say \\(L_1\\) and \\(L_2\\) are *projectively equivalent*. Equivalence classes under \\(\sim\\) are also called 
-*projective classes*.
+*projective classes*. We shall write \\(\mathrm{PLat}(\mathbb{C})\\) to denote the set of projective classes of lattices in \\(\mathbb{C}\\).
 ∎
 
 **Definition 3.**
 We say that two lattices are *commensurable* if the subgroup \\(L_1 \cap L_2\\) has finite index in both \\(L_1\\) and \\(L_2\\). Two 
-projective classes of lattices are commensurable if we can choose commensurable representative elements.
+projective classes of lattices are commensurable if we can choose commensurable representative elements. The set of lattices (resp.
+projective lattices) commensurable to \\(L_1\\) is denoted \\(\mathrm{Lat} _ {L_1}(\mathbb{C})\\) (resp. \\(\mathrm{PLat} _ {L_1}(\mathbb{C})\\)).
 ∎
 
 Notice that a lattice in \\(\mathbb{C}\\) is the same thing as a discrete additive subgroup of \\(\mathbb{C}\\). 
@@ -51,27 +52,28 @@ Notice that a lattice in \\(\mathbb{C}\\) is the same thing as a discrete additi
 
 Let \\(e_1 = 1\\) and \\(e_2 = i\\) be the standard basis vectors for \\(\mathbb{C}\\) as an \\(\mathbb{R}\\)-vector space. The lattice
 \\(\langle e_1, e_2\rangle\\) is called the *standard lattice*. In this section we show that any projective class of lattice commensurable to 
-\\(\langle e_1, e_2\rangle\\) has a representative of the form \\(\langle M e_1 + \frac{m}{g} e_2, e_2\rangle\\). 
+\\(\langle e_1, e_2\rangle\\) has a representative of the form \\(\langle M e_1 + \frac{g}{h} e_2, e_2\rangle\\) where \\(M > 0\\) and
+\\(0 \leq \frac{g}{h} <1\\) is a fraction in lowest terms. 
 
-To this end, let us first observe that any lattice commensurable with \\(\langle e_1, e_2\rangle\\) can be written in the form
+To this end, let us first observe that a generic lattice commensurable with \\(\langle e_1, e_2\rangle\\) can be written in the form
 <div class="mathjax">\begin{equation} \label{eq:fracs}
  \left\langle \frac{a_0}{a_1} e_1 + \frac{b_0}{b_1} e_2, \frac{c_0}{c_1} e_1, \frac{d_0}{d_1} e_2 \right\rangle
 \end{equation}</div>
-where each of the coefficients on the \\(e_i\\) are elements of \\(\mathbb{Q}\\) in lowest terms. Clearing denominators in equation 
-\ref{eq:fracs} yields a projectively equivalent lattice
+where each of the coefficients on the \\(e_i\\) are elements of \\(\mathbb{Q}\\) in lowest terms. Multiplying through by 
+\\(\frac{a_1 c_1}{\mathrm{gcd}(a_1 c_0, a_0 c_1)}\\) in \ref{eq:fracs} yields a projectively equivalent lattice
 <div class="mathjax">\begin{equation} \label{eq:ints}
   \langle Ae_1 + Be_2 , Ce_1 + De_2 \rangle
 \end{equation}</div>
-where \\(A, B, C, D \in \mathbb{Z}\\) have no common factors. Next, if we choose a matrix 
+where \\(A\\) and \\(C\\) are co-prime integers. If we choose a matrix
 \\(\left(\begin{smallmatrix}\alpha & \beta \\\\ \gamma & \delta\end{smallmatrix}\right) \in \mathrm{SL}(2;\mathbb{Z})\\) then the lattice
 <div class="mathjax">\begin{equation} \label{eq:big}
   \langle \alpha(Ae_1 + Be_2) + \beta(Ce_1 + De_2), \gamma(Ae_1 + Be_2) + \delta(Ce_1 + De_2)\rangle
 \end{equation}</div>
-is the same as the lattice in equation \ref{eq:ints}. If this expression is to reduce to something of the form
-\\(\langle Me_1 + \frac{m}{g} e_2, e_2\rangle\\), it is going to be necessary to choose
-\\(\left(\begin{smallmatrix}\alpha & \beta \\\\ \gamma & \delta\end{smallmatrix}\right)\\) such that \\(\gamma A + \delta C = 0\\). One obvious 
-choice is to take \\(\gamma = -C\\) and \\(\delta = A\\). Then \\(\gamma\\) and \\(\delta\\) are co-prime since \\(A\\) and \\(C\\) are
-assumed co-prime. As such, there exist \\(\alpha, \beta \in \mathbb{Z}\\) such that
+is the same as the one in equation \ref{eq:ints}. We want this expression to reduce to something of the form
+\\(\langle Me_1 + \frac{g}{h} e_2, e_2\rangle\\), so it will be necessary to choose
+\\(\left(\begin{smallmatrix}\alpha & \beta \\\\ \gamma & \delta\end{smallmatrix}\right)\\) such that \\(\gamma A + \delta C = 0\\).
+One obvious choice is \\(\gamma = -C\\) and \\(\delta = A\\). Then \\(\gamma\\) and \\(\delta\\) are co-prime since \\(A\\) and \\(C\\) are
+chosen to be co-prime. As such, there exist \\(\alpha, \beta \in \mathbb{Z}\\) such that
 <div class="mathjax">\begin{equation*}
   \alpha\delta - \beta\gamma = 1
 \end{equation*}</div>
@@ -82,8 +84,62 @@ In other words, it is possible to choose
   \langle (\alpha A + \beta C)e_1 + (\alpha B + \beta D)e_2, (AD - BC)e_2\rangle
 \end{equation}</div>
 Finally, dividing by \\(AD - BC\\) yields a lattice projectively equivalent to \ref{eq:e2clear}:
-<div class="mathjax">\begin{equation}
+<div class="mathjax">\begin{equation} \label{eq:almost}
   \left\langle \frac{\alpha A + \beta C}{AD - BC} e_1 + \frac{\alpha B + \beta D}{AD - BC} e_2, e_2 \right\rangle
 \end{equation}</div>
-Setting \\(M = \frac{\alpha A + \beta C}{AD - BC}\\), \\(g = \alpha B + \beta D\\), and \\(m = AD - BC\\) we arrive at a representative for
-our projective class of lattices in the desired form. 
+Setting \\(M = \frac{\alpha A + \beta C}{AD - BC}\\), \\(g = \alpha B + \beta D\\), and \\(h = AD - BC\\) we arrive at a representative for
+our projective class of lattices in the desired form. The \\(0\leq \frac{g}{h} < 1\\) condition follows from the fact that changing base by
+\\(\left(\begin{smallmatrix}1 & n \\\\ 0 & 1\end{smallmatrix}\right)\\) in \ref{eq:almost} allows us to add/subtract multiples of \\(e_2\\)
+from \\(\frac{\alpha B + \beta D}{AD - BC}\\), so its value only matters modulo 1. Positivity of \\(M\\) follows from the fact we have
+made no orientation reversing change of base.
+
+### Hyperdistance
+
+We can define a metric on the set \\(\mathrm{PLat} _ L (\mathbb{C})\\) of all lattices commensurable to some given lattice \\(L\\). In order 
+to do so, it is convenient to first adopt a matrix-based perspective on lattices in \\(\mathbb{C}\\). With this in mind, notice that if we 
+fix a basis \\(\{ \omega_1, \omega_2\}\\) for \\(L\\) we obtain identifications
+<div class="mathjax">\begin{equation}
+  \mathrm{SL}(2;\mathbb{Z}) \backslash \mathrm{GL}^+(2;\mathbb{Q}) \longrightarrow \mathrm{Lat} _ L(\mathbb{C})
+\end{equation}</div>
+and
+<div class="mathjax">\begin{equation}
+  \mathrm{PSL}(2;\mathbb{Z}) \backslash \mathrm{PGL}^+(2;\mathbb{Q}) \longrightarrow \mathrm{PLat} _ L(\mathbb{C})
+\end{equation}</div>
+via the map
+<div class="mathjax">\begin{equation}
+  \begin{pmatrix}
+  a & b \\
+  c & d
+  \end{pmatrix}
+  \longmapsto (a\omega_1 + b\omega_2)\mathbb{Z} + (c\omega_1 + b\omega_2)\mathbb{Z}
+\end{equation}</div>
+once we recall the \\(\mathrm{SL}(2;\mathbb{R})\\)-action on lattices only serves to change bases. Under this identification the lattice
+\\(\langle Me_1 + \frac{g}{h}e_2 , e_2\rangle\\) corresponds to the class of matrices represented by 
+\\(\left(\begin{smallmatrix} M & \frac{g}{h}  \\\\ 0 & 1 \end{smallmatrix}\right)\\).
+
+For concreteness, let us again restrict to the case \\(L = \langle e_1, e_2 \rangle\\). Suppose we are given two projective 
+lattices \\(L_1 = \langle Me_1 + \frac{g}{h}e_2, e_2\rangle\\) and \\(L = \langle Ne_1 + \frac{i}{j}e_2, e_2\rangle\\) both 
+commensurable to \\(L\\). Define \\(\widetilde{d} : \mathrm{PLat} _ L ^ 2 \to \mathbb{Z} _ {>0}\\) by
+<div class="mathjax">\begin{equation}
+  \widetilde{d}(L_1, L_2) =
+  \mathrm{Pdet}\left(
+  \begin{pmatrix}
+  M & \frac{g}{h}  \\
+  0 & 1 
+  \end{pmatrix}
+  \begin{pmatrix}
+  N & \frac{i}{j}  \\
+  0 & 1
+  \end{pmatrix}^{-1}
+  \right)
+\end{equation}</div>
+where \\(\mathrm{Pdet}\\) is the [rational projective determinant]({{ site.baseurl }}{% post_url 2017-02-01-rational-projective-determinant %}).
+Well-definedness of \\(\widetilde{d}\\) follows from the fact that \\(\mathrm{Pdet}\\) is a well-defined map 
+\\(\mathrm{PSL}(2;\mathbb{Z}) \backslash \mathrm{PGL}^+(2;\mathbb{Q}) \to \mathbb{Z} _ {>0}\\). 
+
+**Definition 4.** The map \\(\widetilde{d}\\) above is called the *hyperdistance* function. 
+∎
+
+It follows from the elementary properties of the 
+[rational projective determinant]({{ site.baseurl }}{% post_url 2017-02-01-rational-projective-determinant %}) that
+\\(\log(\widetilde{d})\\) is a distance function. In particular, \\(\widetilde{d}\\) is symmetric. 
