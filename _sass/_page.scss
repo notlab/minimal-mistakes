@@ -399,3 +399,17 @@
   font-size: $type-size-6;
   text-transform: uppercase;
 }
+
+/*
+  Image captions
+  ========================================================================== */
+
+.center-image
+{
+    margin: 0 auto;
+    display: block;
+}
+
+img + em {
+  font-size: $type-size-6;
+}
