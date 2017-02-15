@@ -62,9 +62,10 @@ following diagram[^6], pyramidal neurons are found in the middle layers of the n
 ![Neocortex organization]({{ site.url }}/assets/images/neuro/neocortex-organisation.png){: .center-image }
 
 Pyramidal cells in layers II and II project their axons further into the neocortex, while those in deeper layers often have axons that project 
-out of the cortex to areas like the brainstem and spinal cord. Neurons in layer IV receive most of external connections and project locally to 
+out of the cortex to areas like the brainstem and spinal cord. Neurons in layer IV receive most of the external connections and project locally to 
 other layers of the neocortex. Vertically the neocortex is arranged into so-called 
-[cortical columns](https://en.wikipedia.org/wiki/Cortical_column) and are sometimes thought of as the generic building blocks of the neocortex. 
+[cortical columns](https://en.wikipedia.org/wiki/Cortical_column). These columns are sometimes thought of as the generic building blocks of 
+the neocortex. 
 
 By preparing very thin slices of a rat's brain (see below[^7]), it is possible to isolate neurons in specific layers of the neocortex. 
 
@@ -82,18 +83,18 @@ values (see b. below).
 
 ![Square-wave and square-wave noise driving currents]({{ site.url }}/assets/images/neuro/lhsf-driving.jpeg){: .center-image }
 
-Both stimuli are periodic, say of period \\(T\\). Since we are interested in responses to constant stimuli, each period naturally breaks
-down into two intervals of interest where the input to the neuron is constant. The first is between time \\(0\\) and time \\(T/2\\) where the 
-neuron is receiving the low-current stimulus; the second is from time \\(T/2\\) to \\(T\\) when it receives high-current stimulus. 
+Both stimuli are periodic, say of period \\(T\\). We are studying responses to constant stimuli, so each period naturally breaks
+down into two intervals of interest. The first is between time \\(0\\) and time \\(T/2\\) when the neuron receives the constant low-current 
+stimulus; the second is from time \\(T/2\\) to \\(T\\) when it receives high-current stimulus. 
 
 Lundstrom et al experimented with values of \\(T\\) ranging from \\(T = 1 ~\mathrm{sec}\\) all the way to \\(T = 32 ~\mathrm{sec}\\). The
-averaged firing response rates from these experiments are summarized below. Graphs *a* and *b* cover times \\([0, T/2]\\), while
-*c* and *d* cover \\([T/2, T]\\). Subject to a bit of normalization, the response profiles are essentially the same for all period lengths
+averaged firing response rates from these experiments are summarized below. Graphs **a** and **b** cover times \\([0, T/2]\\), while
+**c** and **d** cover \\([T/2, T]\\). Subject to a bit of normalization, the response profiles are essentially the same for all period lengths
 \\(T\\).
 
 ![Responses recording in pyramidal neurons to square-wave type stimulation]({{ site.url }}/assets/images/neuro/pyramidal-response.jpeg){: .center-image }
 
-Notice the power-law relationship as in the case of the frog mechanorecptor. Note also that:
+Notice the power-law relationship, just as in the case of the frog mechanorecptor. Note also that:
 
 - Firing frequency trended upwards when given a constant stimulus regime occuring after a high-to-low transition.
 - Firing frequency trended downwards when given a constant stimulus regime occuring after a low-to-high transition.
