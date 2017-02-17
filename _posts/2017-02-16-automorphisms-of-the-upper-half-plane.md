@@ -16,7 +16,8 @@ occuring frequently in applications. It is well known that \\(\mathrm{Aut}(\math
   \mathrm{SL}(2;\mathbb{R}) / \{\pm 1\} \cong
   \mathrm{Aut}(\mathbb{H})
 \end{equation*}</div>
-We make use of these identifications implicitly throughout. 
+where the groups \\(\mathrm{GL}^+(2;\mathbb{R})\\) and \\(\mathrm{SL}(2;\mathbb{R})\\) act by fractional linear transformations. We make use of 
+these identifications implicitly throughout. 
 
 ## Classification of automorphisms
 
@@ -69,7 +70,6 @@ is
 - *hyperbolic* if \\(\mathrm{tr}(g)^2 > 4\mathrm{det}(g)\\);
 - *parabolic* if \\(\mathrm{tr}(g)^2 = 4\mathrm{det}(g)\\);
 - *elliptic* if \\(\mathrm{tr}(g)^2 < 4\mathrm{det}(g)\\).
-
 ∎
 
 Using this terminology and Combining cases 1 and 2, we arrive at a classification of elements in \\(\mathrm{Aut}(\mathbb{H})\\) based on their
@@ -80,5 +80,51 @@ fixed points in \\(\mathbb{PC}^1\\):
 - \\(g\\) hyperbolic implies \\(g\\) has two distinct fixed points \\(\in \mathbb{R} \cup \infty\\);
 - \\(g\\) parabolic implies \\(g\\) has a single fixed point \\(\in \mathbb{R} \cup \infty\\).
 - \\(g\\) elliptic implies \\(g\\) has two distinct fixed points \\(z, \bar{z} \in \mathbb{C} \setminus (\mathbb{R} \cup \infty)\\).
+∎
 
+
+### Stabilizer subgroups
+
+For convenience, we introduce the following notation for certain stabilizer subgroups.
+
+**Definition 2:** Let \\(z \in \mathbb{H} \cup \mathbb{R} \cup \{\infty \}\\). We set 
+<div class="mathjax">\begin{align*}
+  \mathrm{GL}^+(2;\mathbb{R})_z &:= \text{ stabilizer of } z \text{ in } \mathbb{GL}^+(2;\mathbb{R}) \\
+  \mathrm{GL}^+(2;\mathbb{R})^{(p)}_z &:= \text{ parabolic elements of } \mathrm{GL}^+(2;\mathbb{R})_z
+\end{align*}</div>
+The group \\(\mathrm{GL}^+(2; \mathbb{R})^{(p)}_z\\) is called the *parabolic stabilizer* of \\(z\\).
+∎
+
+The next result is immediate from our discussion on the first section.
+
+**Theorem 2:** The stabilizer of \\(\infty\\) in \\(\mathrm{GL}^+(2; \mathbb{R})\\) is given by
+<div class="mathjax">\begin{equation*}
+  \mathrm{GL}^+(2;\mathbb{R})_z = \left\{ \begin{pmatrix}
+  a & b \\
+  0 & d
+  \end{pmatrix} ~\colon~ a, d \in \mathbb{R},~ ad > 0,~ b \in \mathbb{R}\right\} 
+\end{equation*}</div>
+while the parabolic stabilizer is
+<div class="mathjax">\begin{equation*}
+  \mathrm{GL}^+(2;\mathbb{R})^{(p)}_z = \left\{ \begin{pmatrix}
+  a & b \\
+  0 & a
+  \end{pmatrix} ~\colon~ a \in \mathbb{R} \setminus \{0\},~ b \in \mathbb{R}\right\} 
+\end{equation*}</div>
+∎
+
+**Theorem 3:** The stabilizer of \\(i\\) is \\(\mathbb{R}^\times \times \mathbb{SO}(2;\mathbb{R})\\).
+
+*Proof:* 
+Suppose \\(g = \left(\begin{smallmatrix} a & b  \\\\ c & d \end{smallmatrix}\right) \in \mathbb{GL}^+(2;\mathbb{R})\\) stabilizes 
+\\(i \in \mathbb{H}\\). We have
+<div class="mathjax">\begin{equation*}
+  \frac{ai + b}{ci + d}  = i \quad \Leftrightarrow \quad ai + b = -c + di
+\end{equation*}</div>
+So it is necessary that \\(a = d\\) and \\(b = -c\\); in other words, 
+\\(g = \left(\begin{smallmatrix} a & b  \\\\ -b & a \end{smallmatrix}\right)\\). Computing the determinant gives
+\\(\mathrm{det} \left(\begin{smallmatrix} a & b  \\\\ -b & a \end{smallmatrix} \right) = a^2 + b^2 = R\\) for some 
+\\(R > 0\\). The matrices satisfying this equation are precisely those of the form
+\\(\pm \sqrt{R} \cdot \left(\begin{smallmatrix} \cos(\theta) & \sin(\theta)  \\\\ -\sin(\theta) & \cos(\theta) \end{smallmatrix} \right)\\)
+with \\(\theta \in [0, 2\pi)\\). But this set is precisely \\(\mathbb{R}^\times \times \mathbb{SO}(2;\mathbb{R})\\), so we are done. 
 ∎
