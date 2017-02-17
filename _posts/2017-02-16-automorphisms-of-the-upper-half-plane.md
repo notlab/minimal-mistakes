@@ -113,10 +113,10 @@ while the parabolic stabilizer is
 \end{equation*}</div>
 ∎
 
-**Theorem 3:** The stabilizer of \\(i\\) is \\(\mathbb{R}^\times \times \mathbb{SO}(2;\mathbb{R})\\).
+**Theorem 3:** The stabilizer of \\(i\\) is \\(\mathbb{R}^\times \times \mathrm{SO}(2;\mathbb{R})\\).
 
 *Proof:* 
-Suppose \\(g = \left(\begin{smallmatrix} a & b  \\\\ c & d \end{smallmatrix}\right) \in \mathbb{GL}^+(2;\mathbb{R})\\) stabilizes 
+Suppose \\(g = \left(\begin{smallmatrix} a & b  \\\\ c & d \end{smallmatrix}\right) \in \mathrm{GL}^+(2;\mathbb{R})\\) stabilizes 
 \\(i \in \mathbb{H}\\). We have
 <div class="mathjax">\begin{equation*}
   \frac{ai + b}{ci + d}  = i \quad \Leftrightarrow \quad ai + b = -c + di
@@ -126,5 +126,5 @@ So it is necessary that \\(a = d\\) and \\(b = -c\\); in other words,
 \\(\mathrm{det} \left(\begin{smallmatrix} a & b  \\\\ -b & a \end{smallmatrix} \right) = a^2 + b^2 = R\\) for some 
 \\(R > 0\\). The matrices satisfying this equation are precisely those of the form
 \\(\pm \sqrt{R} \cdot \left(\begin{smallmatrix} \cos(\theta) & \sin(\theta)  \\\\ -\sin(\theta) & \cos(\theta) \end{smallmatrix} \right)\\)
-with \\(\theta \in [0, 2\pi)\\). But this set is precisely \\(\mathbb{R}^\times \times \mathbb{SO}(2;\mathbb{R})\\), so we are done. 
+with \\(\theta \in [0, 2\pi)\\). But this set is precisely \\(\mathbb{R}^\times \times \mathrm{SO}(2;\mathbb{R})\\), so we are done. 
 ∎
