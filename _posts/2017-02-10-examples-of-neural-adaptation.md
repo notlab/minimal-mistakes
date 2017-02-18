@@ -61,7 +61,7 @@ following diagram[^6], pyramidal neurons are found in the middle layers of the n
 
 ![Neocortex organization]({{ site.url }}/assets/images/neuro/neocortex-organisation.png){: .center-image }
 
-Pyramidal cells in layers II and II project their axons further into the neocortex, while those in deeper layers often have axons that project 
+Pyramidal cells in layers II and III project their axons further into the neocortex, while those in deeper layers often have axons that project 
 out of the cortex to areas like the brainstem and spinal cord. Neurons in layer IV receive most of the external connections and project locally to 
 other layers of the neocortex. Vertically the neocortex is arranged into so-called 
 [cortical columns](https://en.wikipedia.org/wiki/Cortical_column). These columns are sometimes thought of as the generic building blocks of 
