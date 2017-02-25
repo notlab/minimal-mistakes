@@ -10,16 +10,28 @@ In this note we investigate series solutions to the [Bessel equation](https://ww
 <div class="mathjax">\begin{equation} \label{eq:bessel}
   z^2 u'' + zu' + (z^2 - \nu^2)u = 0
 \end{equation}</div>
-Solutions to the Bessel equation are transcendental functions, and they have wide application. For instance they appear in the classical theory 
-of [modular forms](https://en.wikipedia.org/wiki/Modular_form) on the upper half plane, and the solutions of the 
+Solutions to the Bessel equation are transcendental functions called Bessel functions, and they have wide application. For instance they appear 
+in the classical theory of [modular forms](https://en.wikipedia.org/wiki/Modular_form) on the upper half plane, and the solutions of the 
 [heat equation](https://en.wikipedia.org/wiki/Heat_equation) and 
 [Schrodinger equation](https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation)
-in cylindrical coordinates. 
+in cylindrical coordinates. There are many different kinds of Bessel function. Each of these tends to be best suited to a specific type of 
+application. In this note we treat the most common kinds of Bessel function.
 
-### First Solutions
+For convenience, we introduce the notation
+<div class="mathjax">\begin{equation*} 
+  L_\nu = z^2 \frac{\mathrm{d}^2}{\mathrm{d}z^2} + z \frac{\mathrm{d}}{\mathrm{d}z} + (z^2 - \nu^2)
+\end{equation*}</div>
+for the differential operator in \ref{eq:bessel}. The Bessel equation can then be rewritten as
+<div class="mathjax">\begin{equation*} 
+  L_\nu[v] = 0
+\end{equation*}</div>
 
-Note that our equation has a [regular singular point](https://en.wikipedia.org/wiki/Regular_singular_point) at \\(z = 0\\). As usual we look for
-solutions of the form
+## Bessel Functions of the First Kind
+
+### Derivation of Solutions
+
+Note that our equation has a [regular singular point](https://en.wikipedia.org/wiki/Regular_singular_point) at \\(z = 0\\). In this section
+we follow the usual approach for finding series solutions to ODE with regular singularities. Namely, we look for solutions of the form 
 <div class="mathjax">\begin{equation*} 
   u(z) = z^\alpha \sum_{n=0}^{\infty} a_n z^n = \sum_{n=0}^{\infty} a_n z^{n+\alpha}
 \end{equation*}</div>
@@ -106,3 +118,54 @@ In all situations considered so far (ie. when \\(2\nu\\) is not an integer) the 
 
 **Definition 1:** The functions \\(J_\nu\\) and \\(J_{-\nu}\\) defined above are called *Bessel functions of the first kind*.
 ∎
+
+### Fundamental System of \\(1^{st}\\)-kind solutions.
+
+In this section we show that, provided \\(\nu \not\in \mathbb{Z}\\), the system \\(\\{ J_\nu, J_{-\nu}\\}\\) forms a linearly independent basis 
+of solutions for the Bessel equation \ref{eq:bessel}. To do so, it suffices to show the Wronskian determinant
+\\(\mathcal{W}(J_\nu, J_{-\nu}) \\) does not vanish. In other words, we want to show
+<div class="mathjax">\begin{equation*} 
+  \mathcal{W}(J_{\nu}(z), J_{-\nu}(z)) 
+    =
+  \det \begin{pmatrix}
+  J_\nu & J_{-\nu} \\
+  \frac{\partial J_\nu}{\partial z} & \frac{\partial J_{-\nu}}{\partial z}
+  \end{pmatrix}
+    =
+  0
+\end{equation*}</div>
+
+First, we attempt to extract a Wronskian-like quantity from the Bessel equation by computing
+<div class="mathjax">\begin{align*} 
+  J_\nu \cdot L_\nu[J_{-\nu}] &- J_{-\nu} \cdot L_\nu[J_\nu] \\
+    &=
+  z^2 J_\nu \frac{\partial^2 J_{-\nu}}{\partial z^2} - z^2 J_{-\nu} \frac{\partial^2 J_\nu}{\partial z^2} +
+    z J_\nu  \frac{\partial J_{-\nu}}{\partial z} - z J_{-\nu} \frac{\partial J_\nu}{\partial z} \\
+    &=
+  z \left[z J_\nu \frac{\partial^2 J_{-\nu}}{\partial z^2} - z J_{-\nu} \frac{\partial^2 J_\nu}{\partial z^2} +
+    J_\nu \frac{\partial J_{-\nu}}{\partial z} - J_{-\nu} \frac{\partial J_\nu}{\partial z} \right] \\
+    &=
+  0
+\end{align*}</div>
+The whole expression equals zero since \\(L_\nu[J_{-\nu}] = 0 = L_\nu[J_\nu]\\). The bracketed term on the last line above somewhat resembles the 
+product \\(z \mathcal{W}(J_\nu, J_{-\nu})\\). The main differences between the two are the second-order derivatives and factor of \\(z\\). 
+Both of these differences can be accounted for by taking a derivative. We compute:
+<div class="mathjax">\begin{align*} 
+  \frac{\mathrm{d}}{\mathrm{d}z} \left[ zW(J_\nu, J_{-\nu})\right] 
+    &=
+  z J_\nu \frac{\partial^2 J_{-\nu}}{\partial z^2} 
+    + \left(z \frac{\partial J_{\nu}}{\partial z} + J_\nu\right)\frac{\partial J_{-\nu}}{\partial z}
+	- z J_{-\nu} \frac{\partial^2 J_\nu}{\partial z^2} 
+	- \left(z \frac{\partial J_{-\nu}}{\partial z} + J_{-\nu}\right) \frac{\partial J_\nu}{\partial z} \\
+	&=
+  z J_\nu \frac{\partial^2 J_{-\nu}}{\partial z^2} J_{-\nu} - z J_{-\nu} \frac{\partial^2 J_\nu}{\partial z^2}
+    + J_\nu \frac{\partial J_{-\nu}}{\partial z} - J_{-\nu} \frac{\partial J_\nu}{\partial z} \\
+	&= 
+  \frac{J_\nu \cdot L_\nu[J_{-\nu}] - J_{-\nu} \cdot L_\nu[J_\nu]}{z} \\
+    &=
+  0
+\end{align*}</div>
+In other words, the function \\(z \mapsto z\cdot \mathcal{W}(J_\nu(z), J_{-\nu}(z))\\) is constant. Solving for the Wronskian, we have
+<div class="mathjax"> \begin{equation*}
+  \mathcal{W}(J_\nu, J_{-\nu}) = \frac{C}{z}
+\end{equation*} </div>
