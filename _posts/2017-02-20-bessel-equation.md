@@ -151,7 +151,7 @@ The whole expression equals zero since \\(L_\nu[J_{-\nu}] = 0 = L_\nu[J_\nu]\\).
 product \\(z \mathcal{W}(J_\nu, J_{-\nu})\\). The main differences between the two are the second-order derivatives and factor of \\(z\\). 
 Both of these differences can be accounted for by taking a derivative. We compute:
 <div class="mathjax">\begin{align*} 
-  \frac{\mathrm{d}}{\mathrm{d}z} \left[ zW(J_\nu, J_{-\nu})\right] 
+  \frac{\mathrm{d}}{\mathrm{d}z} [ zW(J_\nu &, J_{-\nu})] \\
     &=
   z J_\nu \frac{\partial^2 J_{-\nu}}{\partial z^2} 
     + \left(z \frac{\partial J_{\nu}}{\partial z} + J_\nu\right)\frac{\partial J_{-\nu}}{\partial z}
@@ -166,6 +166,34 @@ Both of these differences can be accounted for by taking a derivative. We comput
   0
 \end{align*}</div>
 In other words, the function \\(z \mapsto z\cdot \mathcal{W}(J_\nu(z), J_{-\nu}(z))\\) is constant. Solving for the Wronskian, we have
-<div class="mathjax"> \begin{equation*}
+<div class="mathjax"> \begin{equation} \label{eq:frac}
   \mathcal{W}(J_\nu, J_{-\nu}) = \frac{C}{z}
-\end{equation*} </div>
+\end{equation}</div>
+
+In order to evaluate the constant \\(C\\), first let us note the easily obtained formulae, valid when \\(\nu \not\in \mathbb{Z}\\) and for 
+small \\(|z|\\):
+<div class="mathjax">\begin{equation*}
+  J_\nu(z) = \frac{\left(\frac{1}{2} z\right)^\nu}{\Gamma(\nu + 1)} (1 + O(z^2)), \quad\quad
+  \frac{\partial J_{\nu}(z)}{\partial z} = \frac{\left(\frac{1}{2} z\right)^{\nu-1}}{2\Gamma(\nu)} (1 + O(z^2)) 
+\end{equation*}</div>
+Similar formulae exist for \\(J_{-\nu}\\) and \\(\frac{\partial J_{-nu}}{\partial z}\\). This allows us to compute
+<div class="mathjax"> \begin{align*}
+  \mathcal{W}(J_\nu, J_{-\nu}) 
+    = 
+  J_\nu \frac{\partial J_\nu}{\partial z} - J_{-\nu} \frac{\partial J_{-\nu}}{\partial z}
+    &=
+  \frac{1}{z} \left[\frac{1}{\Gamma(\nu + 1)\Gamma(-\nu)} - \frac{1}{\Gamma(\nu)\Gamma(-\nu + 1)} \right] + O(z) \\
+    &=
+  -\frac{2\sin(\nu\pi)}{\pi z} + O(z)
+\end{align*} </div>
+In light of equation \ref{eq:frac} the \\(O(z)\\) term above must vanish. We conclude
+<div class="mathjax"> \begin{equation*}
+  \mathcal{W}(J _ \nu, J _ {-\nu}) = \frac{2\sin(\nu\pi)}{\pi z} 
+\end{equation*}</div>
+Since \\(\nu \not\in \mathbb{Z}\\), \\(\sin(\nu z\\) does not vanish. We arrive at the following theorem:
+
+**Theorem 1:** When \\(\nu \not\in \mathbb{Z}\\), the \\(1^{st}\\)-kind functions \\(J_\nu\\) and \\(J_{-\nu}\\) form a fundamental system 
+of solutions to Bessel's equation.
+∎
+
+On account of the relation \\(J_n(z) = (-1)^n J_{-n}(z)\\), these functions do *not* form a fundamental system when \\(\nu = n \in \mathbb{Z}\\).
