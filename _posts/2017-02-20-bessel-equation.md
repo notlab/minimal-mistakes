@@ -63,8 +63,8 @@ it will be enough to assume \\(\alpha \pm \nu\\) is not a negative integer.
 <div class="mathjax">\begin{equation*}
   (\alpha^2 - \nu^2)a_0 = 0
 \end{equation*}</div>
-Since \\(a_0 \ne 0\\), this implies \\(\alpha = \pm \nu\\). The restriction \\(\alpha \pm \nu \not\in \mathbb{Z}_{<0}\\) thus reduces to requiring
-\\(\nu\\) not be a half-integer when \\(\alpha = -\nu\\) (resp. \\(\nu\\) not be a negative half-integer when \\(\alpha = \nu\\)).
+Since \\(a _ 0 \ne 0\\), this implies \\(\alpha = \pm \nu\\). The restriction \\(\alpha \pm \nu \not\in \mathbb{Z} _ {<0}\\) thus reduces to 
+requiring \\(-2\nu \not\in \mathbb{Z} _ {<0}\\) when \\(\alpha = -\nu\\) (resp. \\(2\nu \not\in \mathbb{Z}_{<0}\\) when \\(\alpha = \nu\\)).
 
 **Case \\(z^{\alpha + 1}\\):** From this coefficient we obtain
 <div class="mathjax">\begin{equation*}
@@ -118,6 +118,9 @@ In all situations considered so far (ie. when \\(2\nu\\) is not an integer) the 
 
 **Definition 1:** The functions \\(J_\nu\\) and \\(J_{-\nu}\\) defined above are called *Bessel functions of the first kind*.
 ∎
+
+It can be shown, eg. with the Weierstrass M-test, that the sum defining \\(J_\nu\\) converges absolutely and uniformly in a 
+neighbourhood of any \\(z \in \mathbb{C} \setminus \\{ 0 \\}\\) and in any bounded domain of values of \\(\nu\\). 
 
 ### Fundamental System of \\(1^{st}\\)-kind solutions.
 
@@ -197,3 +200,37 @@ of solutions to Bessel's equation.
 ∎
 
 On account of the relation \\(J_n(z) = (-1)^n J_{-n}(z)\\), these functions do *not* form a fundamental system when \\(\nu = n \in \mathbb{Z}\\).
+
+
+## Bessel Functions of the Second Kind
+
+### Derivation of Solutions
+
+In the previous section we derived a fundamental system of solutions to the Bessel equation \ref{eq:bessel} subject to the condition
+\\(\pm 2\nu \ne n\\) for any integer \\(n\in \mathbb{Z}\\). That is, we required \\(\nu\\) not be an even integer, nor half of an odd integer.
+In this section we shall derive a solution that is valid even in the case \\(\nu \in \mathbb{Z}\\). 
+
+For the remainder of this section let us fix some \\(n \in \mathbb{Z}\\). Now, since \\(J_\nu\\) and \\(J_{-\nu}\\) solve the Bessel equation for 
+non-integer \\(\nu\\), so does the linear combination
+<div class="mathjax">\begin{equation*}
+  \frac{J_\nu(z) - (-1)^n J_{-\nu}(z)}{\nu - n} 
+\end{equation*}</div>
+If we then set
+<div class="mathjax">\begin{equation*}
+  \mathbf{Y}(z) = \lim_{\nu \rightarrow n}  \frac{J_\nu(z) - (-1)^n J_{-\nu}(z)}{\nu - n} 
+\end{equation*}</div>
+it seems reasonable to believe that \\(\mathbf{Y}\\) is also a solution to Bessel's equation. In order to check this, we recall 
+\\(J_\nu\\) is analytic in \\(\nu\\) and compute
+<div class="mathjax">\begin{align*}
+  \mathbf{Y}(z) 
+    &=
+  \lim_{\nu \rightarrow n} \frac{J_\nu(z) - (-1)^n J_{-\nu}(z)}{\nu - n} \\
+    &=
+  \lim_{\nu \rightarrow n} \frac{J_\nu(z) - J_n(z)}{\nu - n} - (-1)^n \frac{J_{-nu}(z) - J_{-n}(z)}{\nu - n} \\
+    &=
+  \left. \frac{\partial}{\partial\nu}J_\nu(z) \right|_{\nu = n} - \left. (-1)^n \frac{\partial}{\partial\nu} J_{-\nu} \right|_{\nu = n}
+\end{align*}</div>
+We will show this expression solves equation \ref{eq:bessel}. First we exploit the equality of mixed partials to write
+<div class="mathjax">\begin{equation*}
+  \frac{\partial}{\partial\nu} L_\nu[J_{\pm\nu}]
+\end{equation*}</div>

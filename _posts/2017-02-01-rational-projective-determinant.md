@@ -12,8 +12,8 @@ For even \\(n\\), the rational projective determinant is a canonically defined f
 \\(\mathrm{Pdet} : \mathrm{Mat}(n;\mathbb{Q}) \to \mathbb{Z}\\) introduced by 
 [John F. R. Duncan](https://sites.google.com/site/johnfrduncan/home) in his paper 
 [Arithmetic Groups and the Affine E8 Dynkin Diagram](https://arxiv.org/abs/0810.1465). 
-In this note we define the rational projective determinant and investigate some of its elementary properties. As an aside, this paper is
-a must read.
+In this note we define the rational projective determinant and investigate some of its elementary properties. As an aside, this paper by
+Duncan is a must read.
 
 ### Definition
 
@@ -59,3 +59,40 @@ Continuing in this vein, we have:
 <div class="mathjax">\begin{equation*}
   \mathrm{PSL}(n;\mathbb{Z}) \backslash \mathrm{PGL}^+(n;\mathbb{Q}) \longrightarrow \mathbb{Z}_{>0}
 \end{equation*}</div>
+
+*Proof:* Positivity is immediate from the fact we restrict our domain to \\(\mathrm{GL}^+(n;\mathbb{Q}\\). 
+
+In light of the previous proposition it suffices to show, for all \\(A \in \mathrm{SL}(n;\mathbb{Z})\\) and 
+\\(X \in \mathrm{Mat}(n;\mathbb{Q})\\), we have
+<div class="mathjax">\begin{equation*}
+  \mathrm{Pdet}(AX) = \mathrm{Pdet}(X) = \mathrm{Pdet}(XA)
+\end{equation*}</div>
+To this end, notice
+<div class="mathjax">\begin{equation*}
+  \mathrm{Pdet}(AX) = \alpha_{AX}^n \det(AX) = \alpha_{AX}^n \det(A)\det(X) = \alpha^n_{AX}\det(X)
+\end{equation*}</div>
+and
+<div class="mathjax">\begin{equation*}
+  \mathrm{Pdet}(X) = \alpha_X^n\det(X)
+\end{equation*}</div>
+Thus all we need to do is prove the identity \\(\alpha_{AX} = \alpha_{X}\\) for all \\(A \in \mathrm{SL}(n;\mathbb{Z})\\). Suppose
+\\(\alpha \in \mathbb{Q}\\) is such that \\(\alpha AX \in \mathrm{Mat}(n;\mathbb{Z})\\), ie \\(AX\\) has integer entries. 
+Since \\(A^{-1} \in \mathrm{SL}(2;\mathbb{Z})\\), the matrix
+<div class="mathjax">\begin{equation*}
+  A^{-1}\alpha AX = \alpha X
+\end{equation*}</div>
+also has integer entries. Conversely
+<div class="mathjax">\begin{equation*}
+  \alpha X \in \mathrm{Mat}(n;\mathbb{Z}) \quad \Longrightarrow \quad \alpha AX \in \mathrm{Mat}(n;\mathbb{Z})
+\end{equation*}</div>
+As an immediate consequence, we get the following equality of sets:
+<div class="mathjax">\begin{equation*}
+  \left\{ \alpha \in \mathbb{Q}^+ ~|~  \alpha AX \in \mathrm{Mat}(n;\mathbb{Z}\right\} 
+    =
+  \left\{\alpha \in \mathbb{Q}^+ ~|~ \alpha X \in \mathrm{Mat}(n;\mathbb{Z})\right\} 
+\end{equation*}</div>
+Since these two sets are equal, their smallest elements are also equal. In other words, \\(\alpha_{AX} = \alpha_X\\) and we are done.
+∎
+
+In the note [Conway's Big Picture]({{ site.baseurl }}{% post_url 2017-02-02-conways-big-picture %}) we will use the rational projective
+determinant to define a (hyper-)distance function on the set of projective lattices in \\(\mathbb{C}\\). 
