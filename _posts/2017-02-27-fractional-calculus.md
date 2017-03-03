@@ -96,7 +96,44 @@ If we invert the Fourier transform in the equations above, we obtain a new expre
     &=
   \mathcal{F}^{-1}[(2\pi i\xi)^n] \ast f(x)
 \end{align*}</div>
+Here we must interpret the Fourier transform in the sense of Schwartz distributions. This line of reasoning suggests we define the generalized 
+\\(\alpha^{th}\\) derivative by
+<div class="mathjax">\begin{equation} \label{eq:def2}
+  D^\alpha f(x) = \mathcal{F} ^{-1}[(2\pi i \xi)^\alpha]\ast f(x)
+\end{equation}</div>
 
+Let us try to reconcile this definition with the one given in equation \ref{eq:def1}. We will show that the so-called Weyl fractional
+derivative \\({} _ {-\infty}D _ {x}^\alpha f\\) with base point \\(-\infty\\) has symbol \\((2\pi i\xi)^\alpha\\), meaning that equation
+\ref{eq:def2} defines the same operator as \ref{eq:def1} when \\(c = -\infty\\). To this end we compute
+<div class="mathjax">\begin{align*}
+  \mathcal{F}[{} _ {-\infty} D _ {x}^\alpha f](\xi) 
+    &=
+  \int _ {\mathbb{R}}^{} {} _ {-\infty}D _ {x}^\alpha f(x) e^{-2\pi i \xi x} ~\text{d}x \\
+    &=
+  \frac{1}{\Gamma(-\alpha)} \int_{\mathbb{R}}^{} \int_{-\infty}^{x} \frac{f(t)}{(x-t)^{\alpha + 1}} ~\text{d} t ~ e^{-2\pi i \xi x} ~\text{d} x \\
+    &=
+  \frac{1}{\Gamma(-\alpha)} \int_{\mathbb{R}} \int_{t}^{\infty} \frac{f(t)}{(x-t)^{\alpha + 1}} e^{-2\pi i \xi x} ~\text{d} x ~\text{d} t \\
+    &=
+  \frac{1}{\Gamma(-\alpha)} \int_{\mathbb{R}} f(t)e^{-2\pi i \xi t} \int_{0}^{\infty} x^{-\alpha - 1} e^{-2\pi i \xi x} ~\text{d} x ~\text{d} t \\
+    &=
+  (2\pi i \xi)^{\alpha} \int_{\mathbb{R}}^{} f(t) e^{-2\pi i \xi x} ~\text{d} x \\
+    &=
+  (2\pi i \xi)^{\alpha} \mathcal{F}[f](\xi)
+\end{align*}</div>
+In order to complete the last two steps of the above computation, we use the defintion of the \\(\Gamma\\)-function, which is
+<div class="mathjax">\begin{equation*}
+  \Gamma(\alpha) = \int_{0}^{\infty} t^{\alpha} e^{-\alpha} \frac{~\text{d}t}{t} 
+\end{equation*}</div>
+along with the change of variables \\(s = 2\pi i\xi s\\) with \\(\mathrm{d}s = 2\pi i\xi \mathrm{d}t\\), in order to derive
+<div class="mathjax">\begin{equation*}
+  (2\pi i \xi)^{-\alpha} = \frac{1}{\Gamma(\alpha)} \int_{0}^{\infty} s^{\alpha}e^{-2\pi i\xi s} \frac{~\text{d} s}{s}
+\end{equation*}</div>
+Or, what is the same,
+<div class="mathjax">\begin{equation*}
+  (2\pi i \xi)^{\alpha} = \frac{1}{\Gamma(-\alpha)} \int_{0}^{\infty} t^{-\alpha}e^{-2\pi i\xi t} \frac{~\text{d} t}{t}
+\end{equation*}</div>
+which is exactly the identity we used in the computation above. So to recap, we have shown that the Fourier transform definition of the fractional
+deriviative corresponds to the previous definition, provided we choose the base point \\(c = -\infty\\).  
 
 
 ### Cauchy Integral Formula Approach
