@@ -13,7 +13,7 @@ adapts to a constant input stimulus. In particular, we look at the [neural adapt
 [mechanoreceptors](https://en.wikipedia.org/wiki/Mechanoreceptor) and neocortical 
 [pyramidal neurons](https://en.wikipedia.org/wiki/Pyramidal_cell) in rats.
 
-### Exmaple 1: Frog Mechanorecptors
+### Example 1: Frog Mechanoreceptors
 
 Skeletal muscles in frogs contain "muscle-spindles", which are sensory nerve fibres wrapped in modified muscle tissue. In the example spindle 
 pictured below[^1] we see where the sensory nerve fibres meet with the muscle fibres. Spindles of this form allow the frog to detect 

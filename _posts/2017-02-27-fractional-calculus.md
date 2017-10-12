@@ -71,7 +71,7 @@ for the generalized \\(\alpha^{th}\\)-derivative of \\(f\\):
 In this section we attempt to define a fractional derivative using Fourier analtyic methods. Recall that the Fourier transform is the
 automorphism of \\(L^2(\mathbb{R})\\) defined by
 <div class="mathjax">\begin{equation*}
-  \mathcal{F}[f](\xi) = \int_{\mathbb{R}}^{} f(x)e^{2\pi i\xi x} ~\text{d}x
+  \mathcal{F}[f](\xi) = \int_{\mathbb{R}}^{} f(x)e^{-2\pi i\xi x} ~\text{d}x
 \end{equation*}</div>
 Let \\(S\\) be an operator defined on \\(L^2\\) functions, and let \\(S\\) satisfy the following Fourier transform identity:
 <div class="mathjax">\begin{equation*}
