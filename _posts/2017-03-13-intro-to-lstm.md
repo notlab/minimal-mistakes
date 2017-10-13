@@ -9,7 +9,8 @@ tags:
 ---
 
 This post is intended as a brief introduction to recurrent neural networks, focusing on long-short term memory cells, for
-those with a mathematical background. 
+those with a mathematical background. I highly recommend reading the original and great paper [LSTM](ftp://ftp.idsia.ch/pub/juergen/lstm.pdf)
+by Hochreiter and Schmidhuber.
 
 ## Overview
 
@@ -400,3 +401,4 @@ networks often outperform all other machine learning techniques. This is because
 delays in their input signals, something LSTM was designed specifically to accomplish. Recent developments include the addition of 
 "forget gates" that allow the memory units to reset themselves spontaneously as the network runs, and mechanisms for allowing LSTM
 networks to shift attention to subspaces of the input space. 
+
